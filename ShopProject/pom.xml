@@ -16,7 +16,14 @@
  
  
   <dependencies>  
-  <!-- Java ee api -->
+  <!--  Link backend project -->
+
+  <dependency>
+    <groupId>com.lukaszborowski</groupId>
+  	<artifactId>ShoppingBackend</artifactId>
+ 	 <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+    <!-- Java ee api -->
   <dependency>
 	   <groupId>javax</groupId>
 	    <artifactId>javaee-api</artifactId>
