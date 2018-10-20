@@ -12,7 +12,13 @@ $(function() {
 			$('#contact').addClass('active');
 			break;
 		case 'Products':
-			$('#contact').addClass('active');
+			$('#products').addClass('active');
 			break;
+		case 'All Products':
+			$('#products').addClass('active');
+			break;
+		default:
+			$('#products').addClass('active');
+			$('#a_'+menu).addClass("active");
 	}
 });
