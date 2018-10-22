@@ -26,14 +26,70 @@ public class CategroyTest {
 		
 		
 	}
-	
 	@Test
-	public void testAddCategory() {
+	public void testCRUDCategory() {
+		
+		//create category
+		category = new Category();
+		category.setName("Tablets");
+		category.setDescryption("Description for tablets!");
+		category.setImageURL("CAT_4.png");
+		
+		assertEquals("Something gone wrong!",true, categoryDAO.add(category));
 		category = new Category();
 		category.setName("Television");
 		category.setDescryption("Description for television!");
-		category.setImageURL("CAT_1.png");
+		category.setImageURL("CAT_5.png");
+		
+		assertEquals("Something gone wrong!",true, categoryDAO.add(category));
+		//read category by id
+		category = categoryDAO.get(2);
+		//update category
+		category.setName("TV");
+		assertEquals("Something goes wrong!", true, categoryDAO.update(category));
+		//delete categry
+		assertEquals("Something goes wrong!", true, categoryDAO.delete(category));
+		
+	}
+	/*
+	@Test
+	public void testAddCategory() {
+		category = new Category();
+		category.setName("Laptop");
+		category.setDescryption("Description for laptop!");
+		category.setImageURL("CAT_3.png");
 		
 		assertEquals("Something gone wrong!",true, categoryDAO.add(category));
 	}
+	@Test 
+	public void testGetCategoery() {
+		
+		category = categoryDAO.get(1);
+		assertEquals("Something goes wrong!","Television", category.getName());
+	}
+	
+	@Test
+	public void updateTestCategory() {
+		category = categoryDAO.get(1);
+		
+		category.setName("TV");
+		
+		assertEquals("Something goes wrong!", true, categoryDAO.update(category));
+	}
+	
+	@Test
+	public void deleteTestCategory() {
+		category = categoryDAO.get(1);
+		
+		category.setName("TV");
+		
+		assertEquals("Something goes wrong!", true, categoryDAO.delete(category));
+	}
+	
+	@Test
+	public void testListCategory() {
+		assertEquals("Something gone wrong?", 3,categoryDAO.list().size());
+	}
+	*/
+	
 }
