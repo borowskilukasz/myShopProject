@@ -111,9 +111,9 @@ public class Product {
 	public int getViews() {
 		return views;
 	}
-//	public void setViews(int views) {
-//		this.views = views;
-//	}
+	public void setViews(int views) {
+		this.views = views;
+	}
 	
 	
 }
