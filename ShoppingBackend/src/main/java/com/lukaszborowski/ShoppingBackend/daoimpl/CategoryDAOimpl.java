@@ -59,7 +59,7 @@ public class CategoryDAOimpl implements CategoryDAO {
 	public boolean delete(Category category) {
 		category.setActive(false);
 		try {
-			sessionFactory.getCurrentSession().update(category);
+			this.update(category);
 			return true;
 		}catch(Exception e) {
 			e.printStackTrace();

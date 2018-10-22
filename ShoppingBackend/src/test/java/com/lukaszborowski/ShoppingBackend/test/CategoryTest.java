@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.lukaszborowski.ShoppingBackend.dao.CategoryDAO;
 import com.lukaszborowski.ShoppingBackend.dto.Category;
 
-public class CategroyTest {
+public class CategoryTest {
 
 	private static AnnotationConfigApplicationContext context;
 	private static CategoryDAO categoryDAO;
