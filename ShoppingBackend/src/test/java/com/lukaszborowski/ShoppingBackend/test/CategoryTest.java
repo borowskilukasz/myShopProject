@@ -32,13 +32,13 @@ public class CategoryTest {
 		//create category
 		category = new Category();
 		category.setName("Tablets");
-		category.setDescryption("Description for tablets!");
+		category.setDescription("Description for tablets!");
 		category.setImageURL("CAT_4.png");
 		
 		assertEquals("Something gone wrong!",true, categoryDAO.add(category));
 		category = new Category();
 		category.setName("Television");
-		category.setDescryption("Description for television!");
+		category.setDescription("Description for television!");
 		category.setImageURL("CAT_5.png");
 		
 		assertEquals("Something gone wrong!",true, categoryDAO.add(category));

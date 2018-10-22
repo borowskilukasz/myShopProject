@@ -16,7 +16,7 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	private String descryption;
+	private String description;
 	@Column(name = "image_url")
 	private String imageURL;
 	@Column(name = "is_active")
@@ -37,11 +37,11 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescryption() {
-		return descryption;
+	public String getDescription() {
+		return description;
 	}
-	public void setDescryption(String descryption) {
-		this.descryption = descryption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getImageURL() {
 		return imageURL;
@@ -57,7 +57,7 @@ public class Category {
 	}
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", descryption=" + descryption + ", imageURL=" + imageURL
+		return "Category [id=" + id + ", name=" + name + ", descryption=" + description + ", imageURL=" + imageURL
 				+ ", active=" + active + "]";
 	}
 	
