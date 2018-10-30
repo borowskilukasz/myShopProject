@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lukaszborowski.ShopProject.util.FileUploadUtility;
+import com.lukaszborowski.ShopProject.validator.ProductValidator;
 import com.lukaszborowski.ShoppingBackend.dao.CategoryDAO;
 import com.lukaszborowski.ShoppingBackend.dao.ProductDAO;
 import com.lukaszborowski.ShoppingBackend.dto.Category;
@@ -59,9 +60,12 @@ public class ManagementController {
 	public String handleProductSubmission(@Valid @ModelAttribute("product")Product mProduct, BindingResult result, Model model, 
 			HttpServletRequest request) {
 		
+		new ProductValidator().validate(mProduct, result);
+		
 		if(result.hasErrors()) {			
 			model.addAttribute("userClickManageProduct", true);
-			model.addAttribute("title", "Manage Products");			
+			model.addAttribute("title", "Manage Products");		
+			model.addAttribute("message", "There was a problem with adding product!");		
 			return "page";
 		}
 		
