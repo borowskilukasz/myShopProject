@@ -27,6 +27,8 @@
    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
    	 <property name="basename" value="i18n/messages"></property>
    </bean>
+   <bean id="multipartResolver"
+   		class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
    <mvc:interceptors>
    	 <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
    	 	 <property name="paramName" value="language" />

@@ -28,16 +28,7 @@ $(function() {
 	
 	//code for jquery dataTable
 	//create a dataset
-	var products = [
-		
-		['1', 'ABC'],
-		['2', 'ERT'],
-		['3', 'ZXC'],
-		['4', 'QWE'],
-		['5', 'DEF'],
-		['6', 'GHI'],
-		['7', 'JKL'],
-	];
+
 	var $table = $('#productListTable');
 	
 	//execute the below code only when we have this table
