@@ -31,6 +31,9 @@ body {
 	width:100px;
 	heigh:100px;
 }
+.help-block{
+	color:red;	
+}
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
