@@ -17,10 +17,17 @@ public class JsonDataController {
 
 	@Autowired
 	private ProductDAO productDAO;
+	
 	@RequestMapping("/all/products")
 	@ResponseBody
 	public List<Product> getAllProducts(){
 		return productDAO.listActiveProducts();
+	}
+	
+	@RequestMapping("/admin/all/products")
+	@ResponseBody
+	public List<Product> getAllProductsForAdmin(){
+		return productDAO.list();
 	}
 	
 	@RequestMapping("/category/{id}/products")

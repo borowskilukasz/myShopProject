@@ -43,9 +43,8 @@ public class Product {
 	private int purchases;
 	private int views;
 	@Column(name = "is_active")
-	@JsonIgnore
 	private boolean isActive;
-	
+	@JsonIgnore
 	@Transient
 	private MultipartFile file;
 	
