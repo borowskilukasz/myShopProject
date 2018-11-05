@@ -85,6 +85,9 @@
 		<script src="${js}/bootbox.min.js"></script>
 		<!--  selfcoded javascript -->
 		<script src="${js}/myapp.js"></script>
+		
+		<!--  jQuery validation -->
+		<script src="${js}/jquery.validate.js"></script>
 
 	
 </body>
