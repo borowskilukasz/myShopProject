@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%-5level %msg %d{HH:mm:ss.SSS} %logger{36} %n</Pattern>
+		</encoder>
+		<!-- 
+		       
+			%-5level – means the level of the logging event should be left justified to a width of five characters
+			%msg – outputs the application-supplied message associated with the logging event.
+			%d{HH:mm:ss.SSS} – Used to output the date of the logging event.
+			%logger{36}  – outputs the name of the logger at the origin of the logging event. It takes an integer 
+			%n – outputs the platform dependent line separator character or characters.
+			
+		 -->
+	</appender>
+	
+	<logger name="com.lukaszborowski" level="DEBUG" additivity = "false">
+		<appender-ref ref="consoleAppender"/>
+	</logger>
+	<root level="INFO">
+		<appender-ref ref="consoleAppender"/>
+	</root>
+
+
+</configuration>
