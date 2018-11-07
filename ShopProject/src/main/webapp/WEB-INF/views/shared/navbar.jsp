@@ -26,6 +26,17 @@
               <a class="nav-link" href="${contextRoot}/contact">Contact</a>
             </li>
           </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+          
+          <li class="nav-item" id="contact">
+              <a class="nav-link" href="${contextRoot}/register">Sign Up</a>
+            </li>
+            
+            <li class="nav-item" id="contact">
+              <a class="nav-link" href="${contextRoot}/login">Login</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>

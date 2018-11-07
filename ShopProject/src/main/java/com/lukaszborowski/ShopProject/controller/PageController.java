@@ -109,12 +109,18 @@ public class PageController {
 		
 		productDAO.update(product);
 		
-		
 		mv.addObject("title", product.getName());
 		mv.addObject("product", product);
 		mv.addObject("userClickShowProduct", true);
 		
-		
 		return mv;		
+	}
+	
+	@RequestMapping(value = {"/register"})
+	public ModelAndView register() {
+		
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","Register");
+		return mv;
 	}
 }
