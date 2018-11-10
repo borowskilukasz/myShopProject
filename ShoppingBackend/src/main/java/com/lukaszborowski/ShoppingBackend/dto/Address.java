@@ -1,34 +1,58 @@
 package com.lukaszborowski.ShoppingBackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-public class Address {
+public class Address implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//private fields
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private int id;
 	//many addresses to one user
-	@ManyToOne
-	private User user;
+	
+	//@ManyToOne
+	//private User user;
+
+	@NotBlank(message = "Please enter street")
 	private String street;
+	@NotBlank(message = "Please enter city")
 	private String city;
+	@NotBlank(message = "Please enter state")
 	private String state;
+	@NotBlank(message = "Please enter country")
 	private String country;
 	
 	@Column(name= "postal_code")
+	@NotBlank(message = "Please enter postal code")
 	private String postalCode;
 	private boolean shipping;
 	private boolean billing;
+	
+	@Column(name= "user_id")
+	private int userId;
 
 	//getters and setters
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -36,12 +60,12 @@ public class Address {
 		this.id = id;
 	}
 	
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 
 	public String getStreet() {
 		return street;
@@ -87,7 +111,7 @@ public class Address {
 	}
 	@Override
 	public String toString() {
-		return "Address [id= " + id + ", user= " + user + ", street= " + street + ", city= " + city 
+		return "Address [id= " + id + ", userId= " + userId + ", street= " + street + ", city= " + city 
 				+ ", state= " + state + ", country= " + country + ", postalCode= " + postalCode +
 				", shipping= " + shipping + ", billing= " + billing + "]";
 	}
