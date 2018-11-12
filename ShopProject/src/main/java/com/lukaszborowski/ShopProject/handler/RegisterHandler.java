@@ -3,6 +3,7 @@ package com.lukaszborowski.ShopProject.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.lukaszborowski.ShopProject.model.RegisterModel;
@@ -13,6 +14,9 @@ import com.lukaszborowski.ShoppingBackend.dto.User;
 
 @Component
 public class RegisterHandler {
+	
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	@Autowired 
 	UserDAO userDAO;
 
@@ -66,6 +70,10 @@ public class RegisterHandler {
 			user.setCart(cart);
 			
 		}
+		
+		//encode the password with bcrypt
+		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		
 		//save the user
 		userDAO.addUser(user);
