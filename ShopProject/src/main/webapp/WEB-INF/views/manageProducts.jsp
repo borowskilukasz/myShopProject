@@ -11,7 +11,8 @@
 				</div>
 			</div>
 		</c:if>
-		<div class="col-md-offset-2 col-md-8">
+		<div class="col"></div>
+		<div class="md-offset-2 col-md-8">
 
 
 			<div class="panel panel-primary">
@@ -97,7 +98,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-md-offset-4 col-md-8">
+							<div class="md-offset-4 col-md-8">
 								<input type="submit" name="submit" id="submit" value="submit"
 									class="btn btn-primary" />
 								<!--  hiden fields -->
@@ -114,11 +115,13 @@
 			</div>
 
 		</div>
+		
+		<div class="col"></div>
 	</div>
 	<div class="row">
 		<div class="col-xs-12">
 			<h3>Available Products</h3>
-			</br>
+			
 		</div>
 	</div>
 	<div class="row">
@@ -130,7 +133,7 @@
 						<thread>
 						<tr>
 							<th>Id</th>
-							<th>&#160</th>
+							<th></th>
 							<th>Name</th>
 							<th>Quantity</th>
 							<th>Unit Price</th>
@@ -141,7 +144,7 @@
 						<tfoot>
 							<tr>
 								<th>Id</th>
-								<th>&#160</th>
+								<th></th>
 								<th>Name</th>
 								<th>Quantity</th>
 								<th>Unit Price</th>
@@ -188,7 +191,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<div class="col-md-offset-4 col-md-8">
+							<div class="md-offset-4 col-md-8">
 								<input type="submit" value="Add Category"
 									class="btn btn-primary" />
 							</div>

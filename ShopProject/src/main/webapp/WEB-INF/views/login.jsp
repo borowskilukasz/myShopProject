@@ -18,7 +18,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Online Shop -${title}</title>
+<title>Shopp project -${title}</title>
 
 <script>
 	window.menu = '${title}';
@@ -40,12 +40,11 @@
 <body>
 	<div class="wrapper">
 		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="${contextRoot}/home">Online
-						Shopping</a>
+					<a class="navbar-brand" href="${contextRoot}/home">Shop Project</a>
 				</div>
 			</div>
 		</nav>
@@ -54,7 +53,7 @@
 
 			<c:if test="${not empty message}">
 				<div class="row">
-					<div class="col-md-offset-3 col-md-6">
+					<div class="offset-md-3 col-md-6">
 						<div class="alert alert-danger">${message}</div>
 					</div>
 				</div>
@@ -62,7 +61,7 @@
 			
 			<c:if test="${not empty logout}">
 				<div class="row">
-					<div class="col-md-offset-3 col-md-6">
+					<div class="offset-md-3 col-md-6">
 						<div class="alert alert-danger">${logout}</div>
 					</div>
 				</div>
@@ -70,8 +69,9 @@
 
 
 			<div class="container">
-				<div class="row">
-					<div class="col-md-offset-3 col-md-6">
+				<div class="row">					
+					<div class="col"></div>
+					<div class="col-md-6 border">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
 								<h4>Login</h4>
@@ -96,7 +96,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<div class="col-md-offset-4 col-md-8">
+										<div class="offset-md-4 col-md-8">
 											<input type="submit" value="Login" class="btn btn-primary" />
 											<input type="hidden" name="${_csrf.parameterName}"
 												value="${_csrf.token}" />
@@ -112,8 +112,8 @@
 							</div>
 						</div>
 
-					</div>
-
+					</div>					
+					<div class="col"></div>
 				</div>
 
 			</div>

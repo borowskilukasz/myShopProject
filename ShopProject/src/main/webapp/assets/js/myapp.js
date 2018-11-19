@@ -20,6 +20,9 @@ $(function() {
 		case 'Manage Products':
 			$('#manageProducts').addClass('active');
 			break;
+		case 'User Cart':
+			$('#userCart').addClass('active');
+			break;
 		default:
 			$('#products').addClass('active');
 			$('#a_'+menu).addClass("active");
@@ -305,7 +308,31 @@ var $loginForm = $('#loginForm');
 		});
 	}	
 	
-	
+	//---------------------------------------------------------
+	//handling click event of refresh cart button
+	$('button[name="refreshCart"]').click(function() {
+		var cartLineId = $(this).attr('value');
+		var countElement = $('#count_' + cartLineId);
+		
+		var originalCount = countElement.attr('value');
+		var currentCount = countElement.val();
+		
+		//work only when the count has changed
+		if(currentCount !== originalCount){
+			if(currentCount < 1 || currentCount > 10){
+				countElement.val(originalCount);
+				bootbox.alert({
+					size:'medium',
+					message: 'EOORE'
+				});				
+			}else{
+				var updateUrl = window.contextRoot +'/cart/' + cartLineId + '/update?count=' + currentCount;
+				//forward it to the controller
+				window.location.href = updateUrl;
+			}			
+		}
+		
+	});
 	
 	
 	

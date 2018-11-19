@@ -27,7 +27,7 @@
 	window.contextRoot = '${contextRoot}';
 </script>
 <!-- Bootstrap core CSS -->
-<link href="${css}/bootstrap.min.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap readable theme  -->
 
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
@@ -40,7 +40,6 @@
 </head>
 
 <body>
-	<div class="wrapper">
 		<!-- Navigation -->
 		<%@include file="./shared/navbar.jsp"%>
 
@@ -73,8 +72,12 @@
 			<c:if test="${userClickManageProduct == true}">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
+			<!-- Load only when show cart is clicked -->
+			<c:if test="${userClickShowCart == true}">
+				<%@include file="cart.jsp"%>
+			</c:if>
 		</div>
-	</div>
+
 	<!-- Footer -->
 	<%@include file="./shared/footer.jsp"%>
 	<!-- Bootstrap core JavaScript -->

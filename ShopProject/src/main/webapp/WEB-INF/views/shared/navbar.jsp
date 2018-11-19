@@ -9,7 +9,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<ul class="navbar-nav ml-auto navbar-left">
+			<ul class="nav navbar-nav">
 				<li class="nav-item" id="home"><a class="nav-link"
 					href="${contextRoot}/home">Home <span class="sr-only">(current)</span>
 				</a></li>
@@ -26,7 +26,7 @@
 					href="${contextRoot}/contact">Contact</a></li>
 			</ul>
 
-			<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav ml-auto">
 				<security:authorize access="isAnonymous()">
 					<li class="nav-item" id="contact"><a class="nav-link"
 						href="${contextRoot}/register">Sign Up</a></li>
@@ -36,7 +36,7 @@
 				</security:authorize>
 
 				<security:authorize access="isAuthenticated()">
-					<li class="dropdown"><a
+					<li class="dropdown" id="userCart"><a
 						class="btn btn-default dropdown-toggle" href="javascript:void(0)"
 						id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="true"> ${userModel.fullName} <span
@@ -45,7 +45,7 @@
 						<ul class="dropdown-menu">
 
 							<security:authorize access="hasAuthority('USER')">
-								<li><a href="${contextRoot}/cart"> <span
+								<li><a href="${contextRoot}/cart/show"> <span
 										class="glyphicon glyphicon-shopping-cart"></span> <span
 										class="badge">${userModel.cart.cartLines}</span> PLN
 										${userModel.cart.grandTotal}
