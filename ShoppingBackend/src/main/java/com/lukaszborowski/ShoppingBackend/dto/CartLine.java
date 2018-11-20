@@ -9,14 +9,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+/**
+ * Class that represents cart_line table from database 
+ * @author Lukasz Borowski
+ *
+ */
 @Entity
 @Table(name="cart_line")
 public class CartLine implements Serializable{
 
-	/**
-	 * 
-	 */
+	//---------------------------------------------------------------------------------------
+	//private fields 
+	//---------------------------------------------------------------------------------------
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -35,9 +40,9 @@ public class CartLine implements Serializable{
 	@Column(name = "is_available")
 	private boolean isAvailable = true;
 	
-	/*
-	 * Getters and Setters
-	 */
+	//----------------------------------------------------------------------------------------
+	// getters and setters
+	//----------------------------------------------------------------------------------------
 	public int getId() {
 		return id;
 	}

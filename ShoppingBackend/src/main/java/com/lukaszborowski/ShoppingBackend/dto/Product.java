@@ -15,10 +15,18 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/**
+ * Class that represents product table from database 
+ * @author Lukasz Borowski
+ *
+ */
 @Entity
 public class Product {
 	
-	//private variables 
+	//---------------------------------------------------------------------------------------
+	//private fields 
+	//---------------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -54,11 +62,17 @@ public class Product {
 	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
-	//default constructor
+	/**
+	 * Construct a product with unique code 
+	 */
 	public Product() {		
 		this.code = "PRD" + UUID.randomUUID().toString().substring(26).toUpperCase();
 	}
-	//Getters and Setters
+
+	//----------------------------------------------------------------------------------------
+	// getters and setters
+	//----------------------------------------------------------------------------------------
+	
 	public int getId() {
 		return id;
 	}

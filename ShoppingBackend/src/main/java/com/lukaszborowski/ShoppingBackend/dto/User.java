@@ -14,15 +14,20 @@ import javax.persistence.Transient;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+/**
+ * Class that represents user_detail table from database 
+ * @author Lukasz Borowski
+ *
+ */
 @Entity
 @Table(name="user_detail")
 public class User implements Serializable{
 
-	/**
-	 * 
-	 */
+	//---------------------------------------------------------------------------------------
+	//private fields 
+	//---------------------------------------------------------------------------------------
+	
 	private static final long serialVersionUID = 1L;
-	//private fields
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -49,7 +54,9 @@ public class User implements Serializable{
 	@Transient
 	private String confirmPassword;
 	
-	//getters and setters
+	//----------------------------------------------------------------------------------------
+	// getters and setters
+	//----------------------------------------------------------------------------------------
 	public String getConfirmPassword() {
 		return confirmPassword;
 	}

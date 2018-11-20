@@ -6,12 +6,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Class that represents category table from database 
+ * @author Lukasz Borowski
+ *
+ */
 @Entity
 public class Category {
 
-	/*
-	 * private fields
-	 */	
+	//---------------------------------------------------------------------------------------
+	//private fields 
+	//---------------------------------------------------------------------------------------
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -22,9 +28,9 @@ public class Category {
 	@Column(name = "is_active")
 	private boolean active = true;
 	
-	/*
-	 * Getters and Setters
-	 */
+	//----------------------------------------------------------------------------------------
+	// getters and setters
+	//----------------------------------------------------------------------------------------
 	public int getId() {
 		return id;
 	}

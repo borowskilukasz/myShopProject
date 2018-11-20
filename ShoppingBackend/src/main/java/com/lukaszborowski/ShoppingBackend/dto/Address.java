@@ -10,20 +10,24 @@ import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+/**
+ * Class that represents address table from database 
+ * @author Lukasz Borowski
+ *
+ */
 @Entity
 public class Address implements Serializable{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	//private fields
+	//---------------------------------------------------------------------------------------
+	//private fields 
+	//---------------------------------------------------------------------------------------
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private int id;
 	//many addresses to one user
-	
 	//@ManyToOne
 	//private User user;
 
@@ -45,7 +49,9 @@ public class Address implements Serializable{
 	@Column(name= "user_id")
 	private int userId;
 
-	//getters and setters
+	//----------------------------------------------------------------------------------------
+	// getters and setters
+	//----------------------------------------------------------------------------------------
 	public int getUserId() {
 		return userId;
 	}

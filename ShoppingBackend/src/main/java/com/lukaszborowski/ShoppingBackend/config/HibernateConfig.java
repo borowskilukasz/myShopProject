@@ -13,6 +13,13 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * Database connection properties
+ * 
+ * @author Łukasz Borowski
+ *
+ */
+
 @Configuration
 @ComponentScan(basePackages= {"com.lukaszborowski.ShoppingBackend.dto"})
 @EnableTransactionManagement
@@ -24,7 +31,11 @@ public class HibernateConfig {
 	private static final String DATABASE_USERNAME = "sa";
 	private static final String DATABASE_PASSWORD = "";
 
-	//dataSource bean will be available
+	
+	/**
+	 * dataSource bean will be available
+	 * @return dataSource set
+	 */
 	@Bean("dataSource")
 	public DataSource getDataSource() {
 		
@@ -36,7 +47,11 @@ public class HibernateConfig {
 		dataSource.setPassword(DATABASE_PASSWORD);
 		return dataSource;
 	}
-	//sessionFactory bean
+	/**
+	 * Method that builds session factory 
+	 * @param dataSource is a parameter witch all database variables had set
+	 * @return Session Factory
+	 */
 	@Bean 
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 		
@@ -48,6 +63,10 @@ public class HibernateConfig {
 		
 	}
 
+	/**
+	 * Method that set hibernate properties 
+	 * @return hibernate properties
+	 */
 	private Properties getHibernateProperties() {
 		Properties properties = new Properties();
 		
@@ -60,7 +79,11 @@ public class HibernateConfig {
 		
 		return properties;
 	}
-	//transakcionManager Bean
+	/**
+	 * Transaction manager bean 
+	 * @param sessionFactory is current session factory 
+	 * @return new hibrnate transakcion manager
+	 */
 	@Bean 
 	public HibernateTransactionManager getTransakcionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transakcionManager = new HibernateTransactionManager(sessionFactory);

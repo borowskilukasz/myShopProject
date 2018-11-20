@@ -93,7 +93,6 @@ public class ProductDAOimpl implements ProductDAO {
 						.setParameter("categoryId", categoryId)	
 							.getResultList();
 	}
-	
 
 	@Override
 	public List<Product> getLatestActiveProducts(int count) {
